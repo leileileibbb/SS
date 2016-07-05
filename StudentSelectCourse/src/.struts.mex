@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="OperateStudent" location="182,10" size="525,245">
+    <action name="StudentAction" location="65,47" size="150,62">
+      <result name="success" />
+      <result name="input" />
+    </action>
+    <action name="StudentListAction" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="behinddefault.jsp" />
+      </result>
+    </action>
+    <action name="CourseListAction" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course_list.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="behinddefault.jsp" path="behinddefault.jsp" location="10,135" size="150,55" />
+  <webResource name="course_list.jsp" path="course_list.jsp" location="506,310" size="150,55" />
+</Struts2Diagram>
+

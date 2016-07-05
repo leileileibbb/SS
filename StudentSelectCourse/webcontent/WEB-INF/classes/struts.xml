@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="OperateStudent" extends="struts-default">
+	
+	
+	<global-results>
+	<result name="error">/error.jsp</result>
+	
+	</global-results>
+		<action name="StudentAction" class="com.bzu.action.StudentAction">
+			<result name="success">/jsp/front/default.jsp</result>
+			<result name="input">/jsp/front/login.jsp</result>
+			<result name="operaSuccess">/jsp/behind/stu_list.jsp</result>
+			<result name="operaFail">/jsp/behind/behindlogin.jsp</result>
+			<result name="showdialog">/jsp/behind/add_student.jsp</result>
+		</action>
+		<action name="StudentListAction" class="com.bzu.action.StudentListAction">
+			<result name="success">stu_list.jsp</result>
+		</action>
+
+		<action name="CourseListAction" class="com.bzu.action.CourseListAction">
+			<result name="behind">/jsp/behind/behindcourse_list.jsp</result>
+			<result name="front">/jsp/front/frontcourse_list.jsp</result>
+
+		</action>
+
+		<action name="CourseAction" class="com.bzu.action.CourseAction">
+			<result name="success">/jsp/front/select_course.jsp</result>
+			<result name="operaSuccess" type="redirectAction">CourseListAction</result>
+			<result name="operaFail">/jsp/behind/behindlogin.jsp</result>
+			<result name="showdialog">/jsp/behind/update_course.jsp</result>
+		</action>
+
+		<action name="AdminAction" class="com.bzu.action.AdminerAction">
+			<result name="success">/jsp/behind/behinddefault.jsp</result>
+			<result name="input">/jsp/behind/behindlogin.jsp</result>
+		</action>
+
+		<action name="IndexAction" class="com.bzu.action.IndexAction">
+
+			<result name="student">/jsp/front/login.jsp</result>
+			<result name="admin">/jsp/behind/behindlogin.jsp</result>
+
+		</action>
+
+	</package>
+</struts>    

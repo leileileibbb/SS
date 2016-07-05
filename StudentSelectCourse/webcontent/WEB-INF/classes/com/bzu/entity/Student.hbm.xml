@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bzu.entity.Student" table="Student">
+	 <cache usage="read-write"  region="com.bzu.entity.Student"></cache> 
+	 
+		<id name="id" type="java.lang.Integer">
+			<column name="Id" />
+			<generator class="native" />
+		</id>
+		 <version name="version" column="version" type="integer"></version>
+		<property name="name" type="java.lang.String">
+			<column name="Name" length="10" not-null="true" />
+		</property>
+		<property name="idCard" type="java.lang.String">
+			<column name="idCard" length="50" />
+		</property>
+		<property name="password" type="java.lang.String" />
+		<property name="sex" type="java.lang.Integer">
+			<column name="sex" length="30" />
+		</property>
+		<property name="birthday" type="java.lang.String">
+			<column name="birthday" length="10" />
+		</property>
+		<property name="major" type="java.lang.String">
+			<column name="major" length="30" />
+		</property>
+
+		<property name="photopath" type="java.lang.String" />
+
+		<set name="courses" table="stu_course" cascade="save-update" lazy="false">
+			<key column="stu_id" />
+			<many-to-many class="com.bzu.entity.Course" column="course_id"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
